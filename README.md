@@ -102,7 +102,7 @@ Você também pode usar o comando
 
 ```docker-compose logs```
 
-### Para executar os comantos diretamente no contaner 
+### Para executar os comantos diretamente no container 
 
 ```docker-compose exec ```
 
