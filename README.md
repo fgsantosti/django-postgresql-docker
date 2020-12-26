@@ -22,8 +22,10 @@ Entrando na pasta
 ```django-admin startproject auladocker .```
 
 ## Crie o arquivo requirements.txt e coloque as dependencias necessárias para o projeto
+
 Adicione as dependencias do django 
 ```Django==3.1.2```
+
 Adicione as dependencias para fazer a conexão com o bando de dados PostgreSQL
 ```psycopg2-binary==2.8.6```
 
