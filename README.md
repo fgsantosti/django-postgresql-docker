@@ -1,18 +1,16 @@
-# django-postgresql-docker
-
 # Django com PostgreSQL e Docker 
 
 ## Instalar o Django e Configurar um Ambiente Virtual 
 
 ### Crie um diretório
-mkdir django-apps
-cd django-apps
+``` mkdir django-apps ```
+``` cd django-apps ```
 
 ### Criando seu ambiente virtual. Vamos chamá-lo de generic env
-virtualenv env
+```virtualenv env```
 
 ### Ative o ambiente virtual 
-. env/bin/activate
+```. env/bin/activate```
 
 ### Pode instalar as bibliotecas necessárias, como exemplo:
 pip install django
