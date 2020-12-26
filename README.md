@@ -4,6 +4,9 @@
 
 ### Crie um diretório
 ``` mkdir django-apps ```
+
+Entrando na pasta 
+
 ``` cd django-apps ```
 
 ### Criando seu ambiente virtual. Vamos chamá-lo de generic env
@@ -13,17 +16,19 @@
 ```. env/bin/activate```
 
 ### Pode instalar as bibliotecas necessárias, como exemplo:
-pip install django
+```pip install django```
 
 ## Criando o projeto Django
-django-admin startproject auladocker .
+```django-admin startproject auladocker .```
 
 ## Crie o arquivo requirements.txt e coloque as dependencias necessárias para o projeto
-Django==3.1.2
-psycopg2-binary==2.8.6
+Adicione as dependencias do django 
+```Django==3.1.2```
+Adicione as dependencias para fazer a conexão com o bando de dados PostgreSQL
+```psycopg2-binary==2.8.6```
 
 ## Crie o arquivo Dockerfile e coloque as configurações necessárias 
-
+```
 FROM python:3.8
 
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -35,9 +40,10 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY . .
-
+```
 ## Criando o arquivo docker-compose.yml 
 
+```
 version: "3"
 
 services:
@@ -60,9 +66,9 @@ services:
 
 volumes:
   postgres_data:
-
+```
 ## Faça a configuração do arquivo settings do projeto inserindo a referencia do banco de dados utilizando
-
+```
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -73,42 +79,48 @@ DATABASES = {
         "PORT": 5432,
     }
 }
+```
 
 ## Executando os comandos para execução do docker-compose
 
-docker-compose up 
+```docker-compose up ```
 
 ### Comando para parar a aplicação 
 
-docker-compose down 
+```docker-compose down ```
 
 ### Comando para subir a aplicação depois de modificações na app
-docker-compose up --build
+```docker-compose up --build```
 
-docker-compose up -b
+Você também pode usar o comando 
+
+```docker-compose up -b```
 
 ### Para verificar os logs quando estiver em backlog 
 
-docker-compose logs
+```docker-compose logs```
 
 ### Para executar os comantos diretamente no contaner 
 
-docker-compose exec 
+```docker-compose exec ```
 
 ### Executando os comandos em uma aplicação django 
-docker-compose exec web python manage.py migrate 
+```docker-compose exec web python manage.py migrate ```
 
 web- é o nome da app que foi dados no 
 
 ## Criando super usuário na app
-docker-compose exec web python manage.py createsuperuser 
+```docker-compose exec web python manage.py createsuperuser ```
 
 ## Para verificar se os dados estão sendo persistidos no banco de dados  
-docker-compose down 
-docker-compose up 
+```docker-compose down ```
+
+Para subir a aplicação e o banco novamente
+
+```docker-compose up ```
 ou
-docker-compose up -d 
+```docker-compose up -d ```
 
 ### Qualquer dúvida acione 
-docker-compose --help
-w
+```docker-compose --help```
+
