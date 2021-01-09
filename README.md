@@ -124,11 +124,11 @@ ou
 ```docker-compose up -d ```
 
 ## Abrir um terminal dentro do container
-docker-compose exec <container> bash
+```docker-compose exec <container> bash```
 
 Aplicando o comando em uma situação real
 
-docker-compose exec webserver bash
+```docker-compose exec webserver bash```
 
 ### Qualquer dúvida acione 
 ```docker-compose --help```
