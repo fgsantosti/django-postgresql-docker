@@ -26,7 +26,7 @@ Entrando na pasta
 ### Adicione as dependencias do django
 ```Django==3.1.2```
 
-### Adicione as dependencias para fazer a conexão com o bando de dados PostgreSQL
+### Adicione as dependencias para fazer a conexão com o banco de dados PostgreSQL
 ```psycopg2-binary==2.8.6```
 
 ## Crie o arquivo Dockerfile e coloque as configurações necessárias 
@@ -122,6 +122,13 @@ Para subir a aplicação e o banco novamente
 ```docker-compose up ```
 ou
 ```docker-compose up -d ```
+
+## Abrir um terminal dentro do container
+docker-compose exec <container> bash
+
+Aplicando o comando em uma situação real
+
+docker-compose exec webserver bash
 
 ### Qualquer dúvida acione 
 ```docker-compose --help```
